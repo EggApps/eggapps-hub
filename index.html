@@ -37,7 +37,16 @@
 <script>
 // Yeni kayıt örneği: { title: "[doldurulacak]", category: "Oyun", description: "[doldurulacak]", url: "[doldurulacak]", tags: [], icon: "✦" }
 // Kategori seçenekleri: Oyun, Araç, Yapay zekâ.
-const projects = [];
+const projects = [
+  {
+    title: "EggAim",
+    category: "Oyun",
+    description: "Yumurta hedeflerini vurarak refleks ve isabetini geliştiren nişan antrenmanı. 6 mod, 4 zorluk seviyesi; fare ve dokunmatikle oynanır.",
+    url: "https://eggapps.github.io/eggaim/",
+    tags: ["Aim trainer", "Refleks", "6 mod", "Mobil uyumlu", "Rekor takibi"],
+    icon: "🎯"
+  },
+];
 const categories = ["Tümü", "Oyun", "Araç", "Yapay zekâ"];
 const filters = document.getElementById("filters");
 const grid = document.getElementById("projectGrid");
