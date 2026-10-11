@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080b12">
+<title>EggApps — Proje Merkezi</title>
+<style>
+:root{color-scheme:dark;--bg:#080b12;--panel:#101521;--line:rgba(220,229,255,.10);--text:#f1f4fb;--muted:#9aa4b8;--lime:#c7f36b;--violet:#9588ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 82% 4%,rgba(111,91,220,.15),transparent 31rem),radial-gradient(ellipse at 8% 45%,rgba(82,128,79,.08),transparent 29rem),var(--bg);color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button,input{font:inherit}.page{width:min(1120px,calc(100% - 48px));margin:auto}.topbar{height:78px;display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--line)}.brand{display:inline-flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-size:19px;font-weight:760;letter-spacing:-.06em}.brand-icon{width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(199,243,107,.36);border-radius:11px;background:rgba(199,243,107,.08);color:var(--lime)}.brand-icon svg{width:21px}.brand-word span{color:var(--lime)}.top-label{padding-left:15px;border-left:1px solid var(--line);color:#8992a6;font-size:10px;letter-spacing:.17em;font-weight:700}.top-note{margin-left:auto;color:var(--muted);font-size:12px;display:flex;align-items:center;gap:9px}.live-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 13px rgba(199,243,107,.8)}
+.hero{min-height:350px;padding:56px 3px 45px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:30px;border-bottom:1px solid var(--line)}.eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 18px;color:var(--lime);font-size:10px;font-weight:750;letter-spacing:.19em}.eyebrow-line{width:23px;height:1px;background:var(--lime)}h1{max-width:690px;margin:0;font-size:clamp(44px,6vw,72px);line-height:.99;letter-spacing:-.075em;font-weight:720}h1 span{color:var(--lime)}.hero-text{max-width:480px;margin:22px 0 0;color:#a4aec1;font-size:16px;line-height:1.8}.hero-visual{position:relative;min-height:250px;display:grid;place-items:center;overflow:hidden}.orbit{position:relative;width:218px;height:218px;border:1px solid rgba(180,190,221,.12);border-radius:50%;display:grid;place-items:center;box-shadow:0 0 70px rgba(117,91,218,.10)}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(180,190,221,.10);border-radius:50%}.orbit:before{inset:19px}.orbit:after{inset:-17px;border-style:dashed;opacity:.55}.core{position:relative;width:82px;height:82px;display:grid;place-items:center;border:1px solid rgba(199,243,107,.42);border-radius:27px;background:linear-gradient(145deg,rgba(199,243,107,.18),rgba(149,136,255,.17));box-shadow:0 0 55px rgba(199,243,107,.12);transform:rotate(-8deg);color:var(--lime)}.core svg{width:36px;height:36px;transform:rotate(8deg)}.orbit-point{position:absolute;top:27px;right:38px;width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 20px var(--lime)}.visual-caption{position:absolute;right:2px;bottom:7px;padding:14px 17px;border:1px solid var(--line);border-radius:13px;background:rgba(16,21,33,.88);backdrop-filter:blur(10px);min-width:145px}.visual-caption p,.visual-caption small{display:block;margin:0;color:var(--muted);font-size:9px;font-weight:700;letter-spacing:.15em}.visual-number{margin:2px 0 0;color:var(--text);font-size:27px;font-weight:700;letter-spacing:-.06em}
+.directory{padding:40px 0 70px}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}.section-heading .eyebrow{margin:0 0 7px}h2{margin:0;font-size:30px;letter-spacing:-.055em}.result-summary{color:var(--muted);font-size:12px;padding-bottom:5px}.controls{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}.filters{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.filter-button{padding:8px 13px;border:1px solid transparent;border-radius:999px;background:transparent;color:#a2acc0;font-size:12px;cursor:pointer;transition:.2s}.filter-button:hover{border-color:var(--line);color:var(--text)}.filter-button.active{border-color:rgba(199,243,107,.28);background:rgba(199,243,107,.10);color:var(--lime)}.search{width:min(250px,100%);height:40px;padding:0 12px;display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:11px;background:rgba(16,21,33,.72);color:var(--muted)}.search svg{width:16px;flex:none}.search input{width:100%;min-width:0;outline:0;border:0;background:transparent;color:var(--text);font-size:12px}.search input::placeholder{color:#778196}.search:focus-within{border-color:rgba(199,243,107,.42);box-shadow:0 0 0 3px rgba(199,243,107,.06)}.project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:14px}.project-card{min-height:220px;padding:19px;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;background:linear-gradient(150deg,rgba(19,25,39,.94),rgba(13,17,27,.96));transition:transform .2s,border-color .2s,background .2s}.project-card:hover{transform:translateY(-3px);border-color:rgba(199,243,107,.27);background:linear-gradient(150deg,#151d2b,#101521)}.card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px}.project-icon{width:41px;height:41px;display:grid;place-items:center;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.035);color:var(--lime);font-size:20px}.category-pill{padding:5px 9px;border:1px solid var(--line);border-radius:999px;color:#b1bad0;font-size:10px}.project-card h3{margin:0 0 7px;font-size:17px;letter-spacing:-.035em}.project-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.7}.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}.tag{padding:4px 8px;border-radius:6px;background:rgba(149,136,255,.10);color:#b9b1ff;font-size:10px}.card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:19px}.project-link{color:var(--lime);font-size:12px;font-weight:650;text-decoration:none}.project-link:hover{text-decoration:underline}.project-link span{padding-left:3px}.project-link.is-disabled{color:#717b90}.empty-state{grid-column:1/-1;min-height:265px;padding:35px 20px;display:grid;place-items:center;text-align:center;border:1px dashed rgba(180,190,221,.17);border-radius:17px;background:linear-gradient(130deg,rgba(16,21,33,.74),rgba(13,17,27,.55))}.empty-inner{max-width:440px}.empty-icon{width:48px;height:48px;margin:0 auto 15px;display:grid;place-items:center;border:1px solid rgba(199,243,107,.22);border-radius:15px;background:rgba(199,243,107,.07);color:var(--lime)}.empty-icon svg{width:22px}.empty-state h3{margin:0 0 7px;font-size:18px;letter-spacing:-.03em}.empty-state p{margin:0;color:var(--muted);font-size:12px;line-height:1.8}.empty-state code{padding:3px 7px;border:1px solid rgba(199,243,107,.15);border-radius:6px;background:rgba(199,243,107,.07);color:var(--lime);font-size:11px}.footer{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--line);color:#778196;font-size:11px}.footer strong{color:#bac3d4;font-weight:650}.footer-mark{color:var(--lime)}
+@media(max-width:720px){.page{width:min(100% - 32px,560px)}.topbar{height:68px}.top-note{font-size:0}.top-note .live-dot{width:8px;height:8px}.hero{grid-template-columns:1fr;padding:48px 0 26px;gap:2px}.hero-visual{min-height:205px;justify-content:center}.orbit{width:172px;height:172px}.orbit:before{inset:15px}.core{width:66px;height:66px;border-radius:22px}.visual-caption{right:8%;bottom:0}.directory{padding:34px 0 48px}.controls{align-items:stretch;flex-direction:column}.filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px}.filter-button{white-space:nowrap}.search{width:100%}.project-grid{grid-template-columns:1fr}.footer{padding:15px 0;align-items:flex-start;flex-direction:column;justify-content:center;gap:3px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="topbar">
+  <a class="brand" href="#" aria-label="EggApps ana sayfa"><span class="brand-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.2c-3.5 0-6.5 5.7-6.5 10.2a6.5 6.5 0 0 0 13 0C18.5 8.9 15.5 3.2 12 3.2Z" stroke="currentColor" stroke-width="1.7"/><path d="M9.2 14.1c.2 1.6 1.2 2.5 2.8 2.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><span class="brand-word">egg<span>apps</span></span></a>
+  <span class="top-label">PROJE MERKEZİ</span>
+  <div class="top-note"><span class="live-dot"></span>Tek yerde. Kolayca keşfet.</div>
+</header>
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div><p class="eyebrow"><span class="eyebrow-line"></span> EGGAPPS / HUB</p><h1 id="hero-title">Projelerin için<br><span>tek bir başlangıç.</span></h1><p class="hero-text">Web oyunları, araçlar ve yapay zekâ uygulamaları. EggApps projelerini burada keşfet.</p></div>
+    <div class="hero-visual" aria-hidden="true"><div class="orbit"><span class="orbit-point"></span><div class="core"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3.2c-3.5 0-6.5 5.7-6.5 10.2a6.5 6.5 0 0 0 13 0C18.5 8.9 15.5 3.2 12 3.2Z" stroke="currentColor" stroke-width="1.5"/><path d="M9.2 14.1c.2 1.6 1.2 2.5 2.8 2.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div></div><div class="visual-caption"><p>KÜTÜPHANE</p><div class="visual-number" id="heroCount">00</div><small>EKLENEN PROJE</small></div></div>
+  </section>
+  <section class="directory" id="projects" aria-labelledby="projects-title">
+    <div class="section-heading"><div><p class="eyebrow">KEŞFET</p><h2 id="projects-title">Projeler</h2></div><div class="result-summary" id="resultSummary" aria-live="polite">0 proje</div></div>
+    <div class="controls"><div class="filters" id="filters" role="group" aria-label="Kategori filtresi"></div><label class="search"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><input id="searchInput" type="search" placeholder="Proje ara…" aria-label="Proje ara"></label></div>
+    <div class="project-grid" id="projectGrid" aria-live="polite"></div>
+  </section>
+</main>
+<footer class="footer"><span><strong>EggApps</strong> <span class="footer-mark">✳</span> Proje Merkezi</span><span>© <span id="year"></span> EggApps</span></footer>
+</div>
+<script>
+// Yeni kayıt örneği: { title: "[doldurulacak]", category: "Oyun", description: "[doldurulacak]", url: "[doldurulacak]", tags: [], icon: "✦" }
+// Kategori seçenekleri: Oyun, Araç, Yapay zekâ.
+const projects = [];
+const categories = ["Tümü", "Oyun", "Araç", "Yapay zekâ"];
+const filters = document.getElementById("filters");
+const grid = document.getElementById("projectGrid");
+const searchInput = document.getElementById("searchInput");
+let activeCategory = "Tümü";
+const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]));
+const safeHref = value => { try { const url = new URL(String(value), location.href); return ["http:", "https:"].includes(url.protocol) ? url.href : ""; } catch { return ""; } };
+function renderFilters(){filters.innerHTML=categories.map(category=>`<button class="filter-button${category===activeCategory?" active":""}" type="button" data-category="${escapeHTML(category)}" aria-pressed="${category===activeCategory}">${escapeHTML(category)}</button>`).join("");}
+function render(){
+  const query=searchInput.value.trim().toLocaleLowerCase("tr");
+  const visible=projects.filter(project=>{
+    const text=[project.title,project.description,project.category,...(Array.isArray(project.tags)?project.tags:[])].join(" ").toLocaleLowerCase("tr");
+    return (activeCategory==="Tümü"||project.category===activeCategory)&&text.includes(query);
+  });
+  document.getElementById("heroCount").textContent=String(projects.length).padStart(2,"0");
+  document.getElementById("resultSummary").textContent=visible.length===projects.length?`${projects.length} proje`:`${visible.length} / ${projects.length} proje`;
+  if(!visible.length){
+    const empty=projects.length===0;
+    grid.innerHTML=`<div class="empty-state"><div class="empty-inner"><div class="empty-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div><h3>${empty?"Henüz proje eklenmedi":"Eşleşen proje bulunamadı"}</h3><p>${empty?`İlk projeyi eklemek için JavaScript içindeki <code>const projects = [];</code> dizisine kayıt ekle. Kartlar otomatik listelenir.`:"Aramanı ya da kategori filtresini değiştirip yeniden dene."}</p></div></div>`;
+    return;
+  }
+  grid.innerHTML=visible.map(project=>{
+    const title=escapeHTML(project.title||"[doldurulacak]");
+    const description=escapeHTML(project.description||"[doldurulacak]");
+    const category=escapeHTML(project.category||"[doldurulacak]");
+    const icon=escapeHTML(project.icon||"✦");
+    const tags=(Array.isArray(project.tags)?project.tags:[]).map(tag=>`<span class="tag">${escapeHTML(tag)}</span>`).join("");
+    const href=safeHref(project.url);
+    const action=href?`<a class="project-link" href="${escapeHTML(href)}" target="_blank" rel="noopener noreferrer">Projeyi aç <span aria-hidden="true">↗</span></a>`:`<span class="project-link is-disabled">Bağlantı eklenmedi</span>`;
+    return `<article class="project-card"><div class="card-head"><div class="project-icon">${icon}</div><span class="category-pill">${category}</span></div><h3>${title}</h3><p>${description}</p>${tags?`<div class="tags">${tags}</div>`:""}<div class="card-foot">${action}</div></article>`;
+  }).join("");
+}
+filters.addEventListener("click",event=>{const button=event.target.closest("button[data-category]");if(!button)return;activeCategory=button.dataset.category;renderFilters();render();});
+searchInput.addEventListener("input",render);
+document.getElementById("year").textContent=new Date().getFullYear();
+renderFilters();render();
+</script>
+</body>
+</html>
